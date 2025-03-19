@@ -11,6 +11,20 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = "/static/"
+
+# STATICFILES_DIRS bo‘lsa, o‘chirmang
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+# collectstatic buyrug‘i bilan barcha static fayllar shu papkaga yig‘iladi
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
